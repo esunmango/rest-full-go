@@ -49,4 +49,10 @@ var routes = Routes{
 		"/pelicula",
 		MovieAdd,
 	},
+	Router{
+		"MovieUpdate",
+		"PUT",
+		"/pelicula/{id}",
+		MovieUpdate,
+	},
 }
