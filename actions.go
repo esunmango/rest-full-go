@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"encoding/json"
 	"github.com/gorilla/mux"
-	//"log"
+	"log"
 	"gopkg.in/mgo.v2"
 )
 
@@ -22,22 +22,24 @@ func getSession() *mgo.Session{
 var collection = getSession().DB("curso_go").C("movies")
 
 
-var movies = Movies{
-	Movie{"sin limite",2013,"Desconocido"},
-	Movie{"Batman",1999,"Desco  sdo"},
-	Movie{"A todo gas",2015,"Duan Anton"},
-}
-
-
 func Index( w http.ResponseWriter, r *http.Request){
 	fmt.Fprintln(w,"Hola koli <a href='/contacto'></a>")
 }
 
 func MovieList	( w http.ResponseWriter, r *http.Request){
 
-	json.NewEncoder(w).Encode(movies)
+	var results []Movie
+	err :=collection.Find(nil).Sort("year").All(&results)
 
-	//fmt.Fprintln(w,"Lista pelicula")
+	if(err != nil){
+		log.Fatal(err)
+	}else{
+		fmt.Println("Resultados: ",results)
+	}
+	w.Header().Set("Content-type","application/json")
+	w.WriteHeader(200)
+	json.NewEncoder(w).Encode(results)
+
 }
 
 func MovieShow ( w http.ResponseWriter, r *http.Request){
