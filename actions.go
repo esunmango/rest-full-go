@@ -7,6 +7,7 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	"gopkg.in/mgo.v2"
+	"gopkg.in/mgo.v2/bson"
 )
 
 func getSession() *mgo.Session{
@@ -45,7 +46,27 @@ func MovieList	( w http.ResponseWriter, r *http.Request){
 func MovieShow ( w http.ResponseWriter, r *http.Request){
 	params := mux.Vars(r)
 	movie_id := params["id"]
-	fmt.Fprintln(w,"Has cargado la pelicula "+movie_id )
+
+	if !bson.IsObjectIdHex(movie_id){
+		w.WriteHeader(404)
+		return
+	}
+
+	oid := bson.ObjectIdHex(movie_id)
+
+	results := Movie{}
+	err := collection.FindId(oid).One(&results)
+
+	if(err != nil){
+		w.WriteHeader(404)
+		return
+	}
+	
+	w.Header().Set("Content-type","application/json")
+	w.WriteHeader(200)
+	json.NewEncoder(w).Encode(results)
+
+
 }
 
 func MovieAdd ( w http.ResponseWriter, r *http.Request){

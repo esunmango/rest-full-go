@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c710364-0e36-4b84-9816-ec5a166adb86" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/actions.go" afterPath="$PROJECT_DIR$/actions.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,10 +39,10 @@
       <file leaf-file-name="actions.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/actions.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+            <state relative-caret-position="470">
+              <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
               <folding>
-                <element signature="e#14#112#0" expanded="true" />
+                <element signature="e#14#136#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -196,7 +197,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/actions.go</url>
+          <line>39</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -231,7 +241,7 @@
         <state relative-caret-position="289">
           <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
           <folding>
-            <element signature="e#14#112#0" expanded="true" />
+            <element signature="e#14#136#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -264,10 +274,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/actions.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+        <state relative-caret-position="470">
+          <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
           <folding>
-            <element signature="e#14#112#0" expanded="true" />
+            <element signature="e#14#136#0" expanded="true" />
           </folding>
         </state>
       </provider>
