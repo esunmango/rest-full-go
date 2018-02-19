@@ -135,3 +135,33 @@ func MovieUpdate ( w http.ResponseWriter, r *http.Request){
 	responseMovie(w,200,movie_data)
 
 }
+
+type Message struct {
+	Status string `json:"status"`
+	Message string `json:"message"`
+}
+
+func MovieRemove ( w http.ResponseWriter, r *http.Request){
+	params := mux.Vars(r)
+	movie_id := params["id"]
+
+	if !bson.IsObjectIdHex(movie_id){
+		w.WriteHeader(404)
+		return
+	}
+
+	oid := bson.ObjectIdHex(movie_id)
+
+	err := collection.RemoveId(oid)
+
+	if(err != nil){
+		w.WriteHeader(404)
+		return
+	}
+
+	results := Message{"success","La pelicula con ID "+movie_id+" ha sido borradacorrectamente"}
+
+	w.Header().Set("Content-type","application/json")
+	w.WriteHeader(200)
+	json.NewEncoder(w).Encode(results)
+}
