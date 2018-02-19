@@ -20,6 +20,18 @@ func getSession() *mgo.Session{
 	return  session
 }
 
+func responseMovie(w http.ResponseWriter, status int, results Movie){
+	w.Header().Set("Content-type","application/json")
+	w.WriteHeader(status)
+	json.NewEncoder(w).Encode(results)
+}
+
+func responseMovies(w http.ResponseWriter, status int, results []Movie){
+	w.Header().Set("Content-type","application/json")
+	w.WriteHeader(status)
+	json.NewEncoder(w).Encode(results)
+}
+
 var collection = getSession().DB("curso_go").C("movies")
 
 
@@ -37,9 +49,7 @@ func MovieList	( w http.ResponseWriter, r *http.Request){
 	}else{
 		fmt.Println("Resultados: ",results)
 	}
-	w.Header().Set("Content-type","application/json")
-	w.WriteHeader(200)
-	json.NewEncoder(w).Encode(results)
+	responseMovies(w,200,results)
 
 }
 
@@ -61,11 +71,8 @@ func MovieShow ( w http.ResponseWriter, r *http.Request){
 		w.WriteHeader(404)
 		return
 	}
-	
-	w.Header().Set("Content-type","application/json")
-	w.WriteHeader(200)
-	json.NewEncoder(w).Encode(results)
 
+	responseMovie(w,200,results)
 
 }
 
@@ -88,9 +95,6 @@ func MovieAdd ( w http.ResponseWriter, r *http.Request){
 		return
 	}
 
-
-	w.Header().Set("Content-type","application/json")
-	w.WriteHeader(200)
-	json.NewEncoder(w).Encode(movie_data)
+	responseMovie(w,200,movie_data)
 
 }
