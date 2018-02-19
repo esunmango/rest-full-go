@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c710364-0e36-4b84-9816-ec5a166adb86" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/actions.go" afterPath="$PROJECT_DIR$/actions.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,9 +38,11 @@
       <file leaf-file-name="actions.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/actions.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="527">
+              <caret line="70" column="41" lean-forward="false" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
+              <folding>
+                <element signature="e#14#114#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -229,7 +230,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-          <folding />
+          <folding>
+            <element signature="e#14#114#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -261,9 +264,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/actions.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="527">
+          <caret line="70" column="41" lean-forward="false" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
+          <folding>
+            <element signature="e#14#114#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
